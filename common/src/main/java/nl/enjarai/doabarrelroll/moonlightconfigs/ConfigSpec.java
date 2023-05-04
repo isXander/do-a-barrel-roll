@@ -4,7 +4,8 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.util.Identifier;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
+
 import java.io.InputStream;
 import java.nio.file.Path;
 import java.util.HashMap;

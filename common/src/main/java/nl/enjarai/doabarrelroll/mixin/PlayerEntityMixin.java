@@ -9,6 +9,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Unit;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import nl.enjarai.doabarrelroll.WaterSplashHandler;
 import nl.enjarai.doabarrelroll.config.ActivationBehaviour;
 import nl.enjarai.doabarrelroll.config.ModConfig;
 import nl.enjarai.doabarrelroll.util.MixinHooks;
@@ -16,6 +17,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(PlayerEntity.class)
@@ -69,5 +71,10 @@ public abstract class PlayerEntityMixin extends LivingEntity {
                 if (shouldCancel) cir.setReturnValue(false);
             }
         }
+    }
+
+    @Inject(method = "tick", at = @At("RETURN"))
+    private void spawnSplashParticles(CallbackInfo ci) {
+        WaterSplashHandler.spawnSplashParticles((PlayerEntity) (Object) this);
     }
 }

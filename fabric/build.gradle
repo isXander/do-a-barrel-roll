@@ -49,8 +49,8 @@ dependencies {
     }
 
     // Mixin Extras for extra compatibility.
-    implementation("com.github.LlamaLad7.mixinextras:mixinextras-fabric:${project.mixin_extras_version}")
-    annotationProcessor("com.github.LlamaLad7.mixinextras:mixinextras-fabric:${project.mixin_extras_version}")
+    implementation("com.github.llamalad7.mixinextras:mixinextras-fabric:${project.mixin_extras_version}")
+    annotationProcessor("com.github.llamalad7.mixinextras:mixinextras-fabric:${project.mixin_extras_version}")
 
     // Cardinal Components API for storing data server-side.
     include modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-base:${project.cardinal_components_version}")
